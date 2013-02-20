@@ -3,7 +3,7 @@
 //  UFOSightings
 //
 //  Created by zhou Yangbo on 13-2-19.
-//  Copyright __MyCompanyName__ 2013年. All rights reserved.
+//  Copyright GODPAPER 2013年. All rights reserved.
 //
 
 

@@ -3,7 +3,7 @@
 //  UFOSightings
 //
 //  Created by zhou Yangbo on 13-2-19.
-//  Copyright __MyCompanyName__ 2013年. All rights reserved.
+//  Copyright GODPAPER 2013年. All rights reserved.
 //
 
 
@@ -12,6 +12,9 @@
 #import "HelloWorldLayer.h"
 
 #import "Constants.h"
+#import "JSONKit.h"
+#import "AllSightingsVO.h"
+#import "SightingsModel.h"
 
 #pragma mark - IntroLayer
 
@@ -76,7 +79,34 @@
     NSURLResponse *response;
     NSError *error;
     NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    //TODO:Jastor serielazation.
-    NSLog(@"UFO JSON data:",jsonData);
+    NSDictionary *jsonKitData = [jsonData objectFromJSONData];
+    NSEnumerator *enumerator = [jsonKitData keyEnumerator];
+    id key;
+    while ((key = [enumerator nextObject]))
+    {
+        NSLog(@"%@", [jsonKitData objectForKey: key]);
+    }
+    // Pretend like you've called a REST service here and it returns a string.
+    // We'll just create a string from the sample json constant at the top
+    // of this file.
+    NSString *jsonKitStr = [jsonKitData JSONString];
+    //    NSLog(@"string from JSONKit: \n%@", jsonKitStr);
+    // 1) Create a dictionary, from the result string,
+    // using JSONKit's NSString category; objectFromJSONString.
+    NSDictionary* dict = [jsonKitStr objectFromJSONString];
+    
+    // 2) Dump the dictionary to the debug console.
+    NSLog(@"Dictionary => %@\n", dict); 
+    
+    // 3) Now, let's create a Person object from the dictionary.
+    AllSightingsVO* allSightingsVO = [[AllSightingsVO alloc] initWithDictionary:dict];
+    
+    // 4) Dump the contents of the person object
+    // to the debug console.
+    NSLog(@"AllSightingsVO => %@\n", allSightingsVO);
+    NSLog(@"AllSightingsVO.total: %@\n", [allSightingsVO total]);
+    
+    // 5) Model store
+    [SightingsModel setAllSightings:allSightingsVO];
 }
 @end

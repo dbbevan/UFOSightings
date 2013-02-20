@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AllSightingsVO.h"
 
 @interface SightingsModel : NSObject
+{}
+
++(SightingsModel *)sharedInstance;
+
+//SightingVOs
++(AllSightingsVO *)getAllSightings;
++(void)setAllSightings:(AllSightingsVO *)value;
 
 @end
