@@ -7,7 +7,15 @@
 //
 
 #import "CCLayer.h"
+#import "cocos2d.h"
+#import <UIKit/UIKit.h>
 
-@interface AllSightingsLayer : CCLayer
+@interface AllSightingsLayer : CCLayer <UITableViewDelegate,UITableViewDataSource>
+{
+    NSArray *listData;
+}
+@property(nonatomic,retain) NSArray *listData;
+// returns a CCScene that contains the HelloWorldLayer as the only child
++(CCScene *) scene;
 
 @end

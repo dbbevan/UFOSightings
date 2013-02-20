@@ -58,7 +58,7 @@
 		// add the label as a child to this Layer
 		[self addChild: background];
         // API JSON data request
-        [self APIinitilization];
+//        [self APIinitilization];
 	}
 	
 	return self;

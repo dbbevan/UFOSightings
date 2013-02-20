@@ -12,6 +12,10 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
+#import "AllSightingsLayer.h"
+
+#import "TableViewLayerGrouped.h"
+#import "TableViewLayerPlain.h"
 
 #pragma mark - HelloWorldLayer
 
@@ -91,8 +95,15 @@
 			[leaderboardViewController release];
 		}
 									   ];
+        // Sightings List Menu Item using blocks
+		CCMenuItem *itemSightingsList = [CCMenuItemFont itemWithString:@"All Sightings" block:^(id sender) {
+			
+				[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[TableViewLayerGrouped scene] ]];
+			
+		}
+									   ];
 		
-		CCMenu *menu = [CCMenu menuWithItems:itemAchievement, itemLeaderboard, nil];
+		CCMenu *menu = [CCMenu menuWithItems:itemAchievement, itemLeaderboard,itemSightingsList, nil];
 		
 		[menu alignItemsHorizontallyWithPadding:20];
 		[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
