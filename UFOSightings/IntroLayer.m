@@ -11,6 +11,7 @@
 #import "IntroLayer.h"
 #import "HelloWorldLayer.h"
 
+#import "Constants.h"
 
 #pragma mark - IntroLayer
 
@@ -53,6 +54,8 @@
 
 		// add the label as a child to this Layer
 		[self addChild: background];
+        // API JSON data request
+        [self APIinitilization];
 	}
 	
 	return self;
@@ -62,5 +65,18 @@
 {
 	[super onEnter];
 	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+}
+
+-(void)APIinitilization
+{
+    NSString *fullURL = INFO_CHIMPS_DOMAIN;
+    fullURL = [fullURL stringByAppendingFormat: INFO_CHIMPS_API_KEY, INFO_CHIMPS_API_Q, INFO_CHIMPS_API_REQ_FROM, INFO_CHIMPS_API_REQ_LIMIT];
+    NSLog(@"fullURL:%@",fullURL);
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:fullURL]];
+    NSURLResponse *response;
+    NSError *error;
+    NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    //TODO:Jastor serielazation.
+    NSLog(@"UFO JSON data:",jsonData);
 }
 @end
