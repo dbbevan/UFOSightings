@@ -8,6 +8,7 @@
 
 #import "AllSightingsLayer.h"
 #import "CCUIViewWrapper.h"
+#import "TableViewController.h"
 
 @implementation AllSightingsLayer
 //
@@ -46,8 +47,8 @@ CCUIViewWrapper *wrapper;
         self.listData = array;
         [array release];
         //UITableView
-        UITableView *tableView = [[UITableView alloc] init];
-        [myView addSubview:tableView];
+        TableViewController *tableViewController = [[TableViewController alloc] initWithStyle:UITableViewStylePlain];
+        [myView addSubview:tableViewController.view];
     }
 	
 	return self;

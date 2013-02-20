@@ -98,7 +98,7 @@
         // Sightings List Menu Item using blocks
 		CCMenuItem *itemSightingsList = [CCMenuItemFont itemWithString:@"All Sightings" block:^(id sender) {
 			
-				[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[TableViewLayerGrouped scene] ]];
+				[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[AllSightingsLayer scene] ]];
 			
 		}
 									   ];
