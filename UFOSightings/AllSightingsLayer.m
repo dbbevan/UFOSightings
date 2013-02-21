@@ -9,12 +9,15 @@
 #import "AllSightingsLayer.h"
 #import "CCUIViewWrapper.h"
 #import "TableViewController.h"
+#import "SightingsModel.h"
 
 @implementation AllSightingsLayer
 //
 @synthesize listData;
 //
-CCUIViewWrapper *wrapper;
+CGSize winSize;
+UIView *uiView;
+CCUIViewWrapper *uiViewWrapper;
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
 {
@@ -35,20 +38,33 @@ CCUIViewWrapper *wrapper;
 -(id) init
 {
 	if( (self=[super init])) {
-        CGSize winSize = [[CCDirector sharedDirector] winSize];
-        
-        UIView *myView = [[[UIView alloc] init] autorelease];
-        wrapper = [CCUIViewWrapper wrapperForUIView:myView];
-        wrapper.contentSize = CGSizeMake(winSize.width, winSize.height);
-        wrapper.position = ccp(0,0);
-        [self addChild:wrapper];
+        winSize = [[CCDirector sharedDirector] winSize];
         //
-        NSArray *array = [[NSArray alloc] initWithObjects:@"iPhone",@"iPod",@"iPad", nil];
+        uiView = [[[UIView alloc] init] autorelease];
+        [uiView setFrame:CGRectMake(0, 0, winSize.width, winSize.height)];
+        uiViewWrapper = [CCUIViewWrapper wrapperForUIView:uiView];
+        uiViewWrapper.contentSize = CGSizeMake(winSize.width, winSize.height);
+        uiViewWrapper.position = ccp(0,0);
+        [self addChild:uiViewWrapper];
+        //
+        //    NSArray *array = [[NSArray alloc] initWithObjects:@"iPhone",@"iPod",@"iPad", nil];
+        NSArray *array = [[SightingsModel getAllSightings] results];
         self.listData = array;
         [array release];
         //UITableView
-        TableViewController *tableViewController = [[TableViewController alloc] initWithStyle:UITableViewStylePlain];
-        [myView addSubview:tableViewController.view];
+//        TableViewController *tableViewController = [[TableViewController alloc]  initWithStyle:UITableViewStylePlain]; 
+         UITableViewController *tableViewController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain]; 
+        CGRect rect = tableViewController.view.frame;
+        rect.size.height = winSize.height; //set height whatever you want.
+        rect.size.width = winSize.width; //set width whatever you want.
+        [UIView beginAnimations:@"TableAnimation" context:NULL];
+        [UIView setAnimationDuration:1];
+        tableViewController.view.frame = rect;
+        [UIView commitAnimations]; 
+        //
+        [uiView addSubview:tableViewController.view];
+
+
     }
 	
 	return self;
@@ -57,8 +73,8 @@ CCUIViewWrapper *wrapper;
 -(void)dealloc
 {
     //Clean up
-    [self removeChild:wrapper cleanup:YES];
-    wrapper = nil;
+    [self removeChild:uiViewWrapper cleanup:YES];
+    uiViewWrapper = nil;
     //
     [listData dealloc];
     //
