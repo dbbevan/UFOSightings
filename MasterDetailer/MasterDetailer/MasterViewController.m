@@ -10,6 +10,9 @@
 
 #import "DetailViewController.h"
 
+#import "SightingsModel.h"
+#import "SightingVO.h"
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
 }
@@ -18,6 +21,7 @@
 @implementation MasterViewController
 
 @synthesize detailViewController = _detailViewController;
+@synthesize sightings = _sightings;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +30,9 @@
         self.title = NSLocalizedString(@"Master", @"Master");
         self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+        //Data model init
+//        _sightings = [[NSMutableArray alloc] initWithArray: 
+//        [[SightingsModel getAllSightings] results] ];
     }
     return self;
 }
@@ -33,7 +40,7 @@
 - (void)dealloc
 {
     [_detailViewController release];
-    [_objects release];
+    [_sightings release];
     [super dealloc];
 }
 
@@ -60,10 +67,10 @@
 
 - (void)insertNewObject:(id)sender
 {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+    if (!_sightings) {
+        _sightings = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [_sightings insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -77,7 +84,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return _sightings.count;
 }
 
 // Customize the appearance of table view cells.
@@ -87,12 +94,30 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier]
+                autorelease];
     }
 
 
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    NSDate *object = [_sightings objectAtIndex:indexPath.row];
+    SightingVO *vo = (SightingVO *)object;
+    cell.textLabel.text = [vo description];
+    cell.detailTextLabel.text = [[vo duration] stringByAppendingFormat:[vo reported_at]];
+    NSString *shape = [vo.shape stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if([shape isEqualToString:@"circle"])
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else if ([shape isEqualToString:@"disk"]) {
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }else if ([shape isEqualToString:@"sphere"]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    
     return cell;
 }
 
@@ -105,7 +130,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [_sightings removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -130,7 +155,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
+    NSDate *object = [_sightings objectAtIndex:indexPath.row];
     self.detailViewController.detailItem = object;
 }
 

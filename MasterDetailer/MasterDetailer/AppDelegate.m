@@ -21,6 +21,8 @@
 @synthesize window = _window;
 @synthesize splitViewController = _splitViewController;
 
+MasterViewController *masterViewController;
+
 - (void)dealloc
 {
     [_window release];
@@ -33,7 +35,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
 
-    MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil] autorelease];
+    masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil] autorelease];
     UINavigationController *masterNavigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
 
     DetailViewController *detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil] autorelease];
@@ -64,6 +66,11 @@
 //    [parser parseJsonUrl:fullURL];
     //File bundle 
     [parser parseJsonFile:@"AllSightings"];
+}
+
+-(void)setMasterControllerData:(NSMutableArray *)data
+{
+    masterViewController.sightings = data;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

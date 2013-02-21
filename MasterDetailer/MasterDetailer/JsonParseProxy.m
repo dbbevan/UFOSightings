@@ -10,6 +10,7 @@
 #import "JSONKit.h"
 #import "AllSightingsVO.h"
 #import "SightingsModel.h"
+#import "AppDelegate.h"
 
 @implementation JsonParseProxy
 
@@ -63,5 +64,13 @@
     
     // 5) Model store
     [SightingsModel setAllSightings:allSightingsVO];
+    
+    // 6) Set delegate
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSMutableArray *mArray = [[NSMutableArray alloc] initWithArray: 
+                              [[SightingsModel getAllSightings] results] ];
+    //
+    [appDelegate setMasterControllerData:mArray];
+    [mArray release];
 }
 @end

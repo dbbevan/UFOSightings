@@ -371,6 +371,7 @@
 		A403728316D6664D00B64362 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MasterDetailer/MasterDetailer-Prefix.pch";
 				INFOPLIST_FILE = "MasterDetailer/MasterDetailer-Info.plist";
@@ -382,6 +383,7 @@
 		A403728416D6664D00B64362 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MasterDetailer/MasterDetailer-Prefix.pch";
 				INFOPLIST_FILE = "MasterDetailer/MasterDetailer-Info.plist";
