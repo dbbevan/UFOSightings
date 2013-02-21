@@ -17,6 +17,15 @@
 		A403727916D6664D00B64362 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A403727816D6664D00B64362 /* DetailViewController.m */; };
 		A403727C16D6664D00B64362 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A403727A16D6664D00B64362 /* MasterViewController.xib */; };
 		A403727F16D6664D00B64362 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A403727D16D6664D00B64362 /* DetailViewController.xib */; };
+		A403729316D6684200B64362 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = A403729016D6684200B64362 /* Jastor.m */; };
+		A403729416D6684200B64362 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A403729216D6684200B64362 /* JastorRuntimeHelper.m */; };
+		A403729716D6685000B64362 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A403729616D6685000B64362 /* JSONKit.m */; };
+		A403729C16D6686100B64362 /* AllSightingsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = A403729916D6686100B64362 /* AllSightingsVO.m */; };
+		A403729D16D6686100B64362 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = A403729B16D6686100B64362 /* Constants.m */; };
+		A40372A216D6686B00B64362 /* SightingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A403729F16D6686B00B64362 /* SightingsModel.m */; };
+		A40372A316D6686B00B64362 /* SightingVO.m in Sources */ = {isa = PBXBuildFile; fileRef = A40372A116D6686B00B64362 /* SightingVO.m */; };
+		A40372AD16D6698500B64362 /* JsonParseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A40372AC16D6698500B64362 /* JsonParseProxy.m */; };
+		A40372AF16D66A8100B64362 /* AllSightings.json in Resources */ = {isa = PBXBuildFile; fileRef = A40372AE16D66A8100B64362 /* AllSightings.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +45,23 @@
 		A403727816D6664D00B64362 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		A403727B16D6664D00B64362 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
 		A403727E16D6664D00B64362 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		A403728F16D6684200B64362 /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
+		A403729016D6684200B64362 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
+		A403729116D6684200B64362 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
+		A403729216D6684200B64362 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
+		A403729516D6685000B64362 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		A403729616D6685000B64362 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		A403729816D6686100B64362 /* AllSightingsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllSightingsVO.h; sourceTree = "<group>"; };
+		A403729916D6686100B64362 /* AllSightingsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllSightingsVO.m; sourceTree = "<group>"; };
+		A403729A16D6686100B64362 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A403729B16D6686100B64362 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		A403729E16D6686B00B64362 /* SightingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightingsModel.h; sourceTree = "<group>"; };
+		A403729F16D6686B00B64362 /* SightingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightingsModel.m; sourceTree = "<group>"; };
+		A40372A016D6686B00B64362 /* SightingVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightingVO.h; sourceTree = "<group>"; };
+		A40372A116D6686B00B64362 /* SightingVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightingVO.m; sourceTree = "<group>"; };
+		A40372AB16D6698500B64362 /* JsonParseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParseProxy.h; sourceTree = "<group>"; };
+		A40372AC16D6698500B64362 /* JsonParseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParseProxy.m; sourceTree = "<group>"; };
+		A40372AE16D66A8100B64362 /* AllSightings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllSightings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,14 +108,12 @@
 		A403726816D6664D00B64362 /* MasterDetailer */ = {
 			isa = PBXGroup;
 			children = (
+				A40372B016D66A9100B64362 /* view */,
+				A40372A416D668D300B64362 /* controller */,
+				A403728B16D6681000B64362 /* utils */,
+				A403728A16D6680B00B64362 /* model */,
 				A403727116D6664D00B64362 /* AppDelegate.h */,
 				A403727216D6664D00B64362 /* AppDelegate.m */,
-				A403727416D6664D00B64362 /* MasterViewController.h */,
-				A403727516D6664D00B64362 /* MasterViewController.m */,
-				A403727716D6664D00B64362 /* DetailViewController.h */,
-				A403727816D6664D00B64362 /* DetailViewController.m */,
-				A403727A16D6664D00B64362 /* MasterViewController.xib */,
-				A403727D16D6664D00B64362 /* DetailViewController.xib */,
 				A403726916D6664D00B64362 /* Supporting Files */,
 			);
 			path = MasterDetailer;
@@ -104,6 +128,89 @@
 				A403727016D6664D00B64362 /* MasterDetailer-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A403728A16D6680B00B64362 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A40372AE16D66A8100B64362 /* AllSightings.json */,
+				A403729E16D6686B00B64362 /* SightingsModel.h */,
+				A403729F16D6686B00B64362 /* SightingsModel.m */,
+				A403729A16D6686100B64362 /* Constants.h */,
+				A403729B16D6686100B64362 /* Constants.m */,
+				A403728E16D6682800B64362 /* vo */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A403728B16D6681000B64362 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A403728D16D6681E00B64362 /* Jastor */,
+				A403728C16D6681500B64362 /* JSONKit */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		A403728C16D6681500B64362 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				A403729516D6685000B64362 /* JSONKit.h */,
+				A403729616D6685000B64362 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		A403728D16D6681E00B64362 /* Jastor */ = {
+			isa = PBXGroup;
+			children = (
+				A403728F16D6684200B64362 /* Jastor.h */,
+				A403729016D6684200B64362 /* Jastor.m */,
+				A403729116D6684200B64362 /* JastorRuntimeHelper.h */,
+				A403729216D6684200B64362 /* JastorRuntimeHelper.m */,
+			);
+			name = Jastor;
+			sourceTree = "<group>";
+		};
+		A403728E16D6682800B64362 /* vo */ = {
+			isa = PBXGroup;
+			children = (
+				A40372A016D6686B00B64362 /* SightingVO.h */,
+				A40372A116D6686B00B64362 /* SightingVO.m */,
+				A403729816D6686100B64362 /* AllSightingsVO.h */,
+				A403729916D6686100B64362 /* AllSightingsVO.m */,
+			);
+			name = vo;
+			sourceTree = "<group>";
+		};
+		A40372A416D668D300B64362 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A403727416D6664D00B64362 /* MasterViewController.h */,
+				A403727516D6664D00B64362 /* MasterViewController.m */,
+				A403727716D6664D00B64362 /* DetailViewController.h */,
+				A403727816D6664D00B64362 /* DetailViewController.m */,
+				A40372A516D668DA00B64362 /* proxy */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A40372A516D668DA00B64362 /* proxy */ = {
+			isa = PBXGroup;
+			children = (
+				A40372AB16D6698500B64362 /* JsonParseProxy.h */,
+				A40372AC16D6698500B64362 /* JsonParseProxy.m */,
+			);
+			name = proxy;
+			sourceTree = "<group>";
+		};
+		A40372B016D66A9100B64362 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A403727A16D6664D00B64362 /* MasterViewController.xib */,
+				A403727D16D6664D00B64362 /* DetailViewController.xib */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +240,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = GODPAPER;
 			};
 			buildConfigurationList = A403725816D6664C00B64362 /* Build configuration list for PBXProject "MasterDetailer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -159,6 +267,7 @@
 				A403726D16D6664D00B64362 /* InfoPlist.strings in Resources */,
 				A403727C16D6664D00B64362 /* MasterViewController.xib in Resources */,
 				A403727F16D6664D00B64362 /* DetailViewController.xib in Resources */,
+				A40372AF16D66A8100B64362 /* AllSightings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +282,14 @@
 				A403727316D6664D00B64362 /* AppDelegate.m in Sources */,
 				A403727616D6664D00B64362 /* MasterViewController.m in Sources */,
 				A403727916D6664D00B64362 /* DetailViewController.m in Sources */,
+				A403729316D6684200B64362 /* Jastor.m in Sources */,
+				A403729416D6684200B64362 /* JastorRuntimeHelper.m in Sources */,
+				A403729716D6685000B64362 /* JSONKit.m in Sources */,
+				A403729C16D6686100B64362 /* AllSightingsVO.m in Sources */,
+				A403729D16D6686100B64362 /* Constants.m in Sources */,
+				A40372A216D6686B00B64362 /* SightingsModel.m in Sources */,
+				A40372A316D6686B00B64362 /* SightingVO.m in Sources */,
+				A40372AD16D6698500B64362 /* JsonParseProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

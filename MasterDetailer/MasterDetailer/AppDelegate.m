@@ -3,7 +3,7 @@
 //  MasterDetailer
 //
 //  Created by zhou Yangbo on 13-2-21.
-//  Copyright (c) 2013年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013年 GODPAPER. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -11,6 +11,10 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+
+#import "JsonParseProxy.h"
+
+#import "Constants.h"
 
 @implementation AppDelegate
 
@@ -42,7 +46,24 @@
     self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, detailNavigationController, nil];
     self.window.rootViewController = self.splitViewController;
     [self.window makeKeyAndVisible];
+    
+    //API initialization here.
+    [self APIinitialization];
+    
     return YES;
+}
+
+-(void)APIinitialization
+{
+    //JSON parse proxy initialization
+    //Remote url
+    JsonParseProxy *parser = [JsonParseProxy new];
+    NSString *fullURL = INFO_CHIMPS_DOMAIN;
+    fullURL = [fullURL stringByAppendingFormat: INFO_CHIMPS_API_KEY, INFO_CHIMPS_API_Q, INFO_CHIMPS_API_REQ_FROM, INFO_CHIMPS_API_REQ_LIMIT];
+    NSLog(@"fullURL:%@",fullURL);
+//    [parser parseJsonUrl:fullURL];
+    //File bundle 
+    [parser parseJsonFile:@"AllSightings"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
