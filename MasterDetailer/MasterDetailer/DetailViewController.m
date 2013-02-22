@@ -9,6 +9,7 @@
 
 #import "DetailViewController.h"
 #import "JSONKit.h"
+#import "SightingLocation.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -66,6 +67,9 @@
         CLLocationCoordinate2D zoomLocation;
         zoomLocation.latitude = queryLocation.latitude;
         zoomLocation.longitude = queryLocation.longitude;
+        //Annotation
+        SightingLocation *annotation = [[SightingLocation alloc] initWithName:[self.detailItem duration] address:[self.detailItem location] coordinate:zoomLocation];
+        [_mapView addAnnotation:annotation];
         //2
         MKCoordinateRegion viewRegion  = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
         //3

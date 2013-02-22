@@ -27,6 +27,7 @@
 		A40372AD16D6698500B64362 /* JsonParseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A40372AC16D6698500B64362 /* JsonParseProxy.m */; };
 		A40372AF16D66A8100B64362 /* AllSightings.json in Resources */ = {isa = PBXBuildFile; fileRef = A40372AE16D66A8100B64362 /* AllSightings.json */; };
 		A4FE5A4816D75CA100771C55 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FE5A4716D75CA100771C55 /* MapKit.framework */; };
+		A4FE5A4C16D7C34100771C55 /* SightingLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FE5A4B16D7C34100771C55 /* SightingLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		A40372AC16D6698500B64362 /* JsonParseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParseProxy.m; sourceTree = "<group>"; };
 		A40372AE16D66A8100B64362 /* AllSightings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllSightings.json; sourceTree = "<group>"; };
 		A4FE5A4716D75CA100771C55 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A4FE5A4A16D7C34100771C55 /* SightingLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightingLocation.h; sourceTree = "<group>"; };
+		A4FE5A4B16D7C34100771C55 /* SightingLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightingLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,8 @@
 			children = (
 				A403727A16D6664D00B64362 /* MasterViewController.xib */,
 				A403727D16D6664D00B64362 /* DetailViewController.xib */,
+				A4FE5A4A16D7C34100771C55 /* SightingLocation.h */,
+				A4FE5A4B16D7C34100771C55 /* SightingLocation.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				A40372A216D6686B00B64362 /* SightingsModel.m in Sources */,
 				A40372A316D6686B00B64362 /* SightingVO.m in Sources */,
 				A40372AD16D6698500B64362 /* JsonParseProxy.m in Sources */,
+				A4FE5A4C16D7C34100771C55 /* SightingLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
