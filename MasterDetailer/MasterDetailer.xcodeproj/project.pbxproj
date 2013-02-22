@@ -26,6 +26,7 @@
 		A40372A316D6686B00B64362 /* SightingVO.m in Sources */ = {isa = PBXBuildFile; fileRef = A40372A116D6686B00B64362 /* SightingVO.m */; };
 		A40372AD16D6698500B64362 /* JsonParseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A40372AC16D6698500B64362 /* JsonParseProxy.m */; };
 		A40372AF16D66A8100B64362 /* AllSightings.json in Resources */ = {isa = PBXBuildFile; fileRef = A40372AE16D66A8100B64362 /* AllSightings.json */; };
+		A4FE5A4816D75CA100771C55 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FE5A4716D75CA100771C55 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		A40372AB16D6698500B64362 /* JsonParseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParseProxy.h; sourceTree = "<group>"; };
 		A40372AC16D6698500B64362 /* JsonParseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParseProxy.m; sourceTree = "<group>"; };
 		A40372AE16D66A8100B64362 /* AllSightings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllSightings.json; sourceTree = "<group>"; };
+		A4FE5A4716D75CA100771C55 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4FE5A4816D75CA100771C55 /* MapKit.framework in Frameworks */,
 				A403726316D6664D00B64362 /* UIKit.framework in Frameworks */,
 				A403726516D6664D00B64362 /* Foundation.framework in Frameworks */,
 				A403726716D6664D00B64362 /* CoreGraphics.framework in Frameworks */,
@@ -98,6 +101,7 @@
 		A403726116D6664D00B64362 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4FE5A4716D75CA100771C55 /* MapKit.framework */,
 				A403726216D6664D00B64362 /* UIKit.framework */,
 				A403726416D6664D00B64362 /* Foundation.framework */,
 				A403726616D6664D00B64362 /* CoreGraphics.framework */,
@@ -411,6 +415,7 @@
 				A403728416D6664D00B64362 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
