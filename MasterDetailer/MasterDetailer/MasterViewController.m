@@ -156,7 +156,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDate *object = [_sightings objectAtIndex:indexPath.row];
-    self.detailViewController.detailItem = object;
+    self.detailViewController.detailItem = (SightingVO *)object;
 }
 
 @end
