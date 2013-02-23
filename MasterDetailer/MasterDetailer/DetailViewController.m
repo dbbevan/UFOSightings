@@ -150,4 +150,22 @@
     return center;
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    static NSString *identifier = @"SightingLocation";
+    if ([annotation isKindOfClass:[SightingLocation class]]) {
+        MKAnnotationView *annotationView = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        if (annotation == nil) {
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        }else {
+            annotationView.annotation = annotation;
+        }
+        annotationView.enabled = YES;
+        annotationView.canShowCallout = YES;
+//        annotationView.image = [UIImage imageNamed:@"TODO"];//FIXME,custom image
+        return annotationView;
+    }
+    return nil;
+}
+
 @end
