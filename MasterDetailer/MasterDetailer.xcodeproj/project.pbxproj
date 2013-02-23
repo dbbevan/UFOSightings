@@ -26,6 +26,7 @@
 		A40372A316D6686B00B64362 /* SightingVO.m in Sources */ = {isa = PBXBuildFile; fileRef = A40372A116D6686B00B64362 /* SightingVO.m */; };
 		A40372AD16D6698500B64362 /* JsonParseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A40372AC16D6698500B64362 /* JsonParseProxy.m */; };
 		A40372AF16D66A8100B64362 /* AllSightings.json in Resources */ = {isa = PBXBuildFile; fileRef = A40372AE16D66A8100B64362 /* AllSightings.json */; };
+		A4F15DD416D866BA00F57B4E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F15DD316D866BA00F57B4E /* MBProgressHUD.m */; };
 		A4FE5A4816D75CA100771C55 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FE5A4716D75CA100771C55 /* MapKit.framework */; };
 		A4FE5A4C16D7C34100771C55 /* SightingLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FE5A4B16D7C34100771C55 /* SightingLocation.m */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,8 @@
 		A40372AB16D6698500B64362 /* JsonParseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParseProxy.h; sourceTree = "<group>"; };
 		A40372AC16D6698500B64362 /* JsonParseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParseProxy.m; sourceTree = "<group>"; };
 		A40372AE16D66A8100B64362 /* AllSightings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllSightings.json; sourceTree = "<group>"; };
+		A4F15DD216D866BA00F57B4E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A4F15DD316D866BA00F57B4E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		A4FE5A4716D75CA100771C55 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A4FE5A4A16D7C34100771C55 /* SightingLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightingLocation.h; sourceTree = "<group>"; };
 		A4FE5A4B16D7C34100771C55 /* SightingLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightingLocation.m; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 		A403728B16D6681000B64362 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4F15DD016D8662A00F57B4E /* MBProgressHUD */,
 				A403728D16D6681E00B64362 /* Jastor */,
 				A403728C16D6681500B64362 /* JSONKit */,
 			);
@@ -220,6 +224,15 @@
 				A4FE5A4B16D7C34100771C55 /* SightingLocation.m */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		A4F15DD016D8662A00F57B4E /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				A4F15DD216D866BA00F57B4E /* MBProgressHUD.h */,
+				A4F15DD316D866BA00F57B4E /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +313,7 @@
 				A40372A316D6686B00B64362 /* SightingVO.m in Sources */,
 				A40372AD16D6698500B64362 /* JsonParseProxy.m in Sources */,
 				A4FE5A4C16D7C34100771C55 /* SightingLocation.m in Sources */,
+				A4F15DD416D866BA00F57B4E /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

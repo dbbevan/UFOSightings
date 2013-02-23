@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "JSONKit.h"
 #import "SightingLocation.h"
+#import "MBProgressHUD.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -132,6 +133,9 @@
     NSString *req = [NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", esc_addr];
     NSString *result = [NSString stringWithContentsOfURL:[NSURL URLWithString:req] encoding:NSUTF8StringEncoding error:NULL];
     NSLog(@"geoCodeUsingAddress result:%@",result);
+    //Display progressHUD
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"GeoCoding...";
     if (result) {
         NSScanner *scanner = [NSScanner scannerWithString:result];
         //
@@ -141,6 +145,8 @@
                 [scanner scanDouble:&longitude];
             }
         }
+        //Remove progressHUD
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
     //
     NSLog(@"geoCodeUsingAddress coordinate2D:%f,%f",latitude,longitude);
