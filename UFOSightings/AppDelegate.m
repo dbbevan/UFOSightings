@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 #import "IntroLayer.h"
 
+#import "Reachability.h"
+#import "Constants.h"
+
 @implementation MyNavigationController
 
 // The available orientations should be defined in the Info.plist file.
@@ -177,5 +180,22 @@
 	[navController_ release];
 	
 	[super dealloc];
+}
+
+-(BOOL)checkNetWork
+{
+    BOOL isExistenceNetwork;
+    Reachability *  reachAbility = [Reachability reachabilityWithHostName:INFO_CHIMPS_DOMAIN];
+    switch ([reachAbility currentReachabilityStatus]) {
+        case NotReachable:
+            isExistenceNetwork = NO;
+            break;
+        case ReachableViaWiFi:
+        case ReachableViaWWAN:
+            isExistenceNetwork = YES;
+        default:
+            break;
+    }
+    return isExistenceNetwork;
 }
 @end

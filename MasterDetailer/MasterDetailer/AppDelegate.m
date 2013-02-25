@@ -16,6 +16,10 @@
 
 #import "Constants.h"
 
+#import "MBProgressHUD.h"
+
+#import "Reachability.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -63,9 +67,13 @@ MasterViewController *masterViewController;
     NSString *fullURL = INFO_CHIMPS_DOMAIN;
     fullURL = [fullURL stringByAppendingFormat: INFO_CHIMPS_API_KEY, INFO_CHIMPS_API_Q, INFO_CHIMPS_API_REQ_FROM, INFO_CHIMPS_API_REQ_LIMIT];
     NSLog(@"fullURL:%@",fullURL);
-//    [parser parseJsonUrl:fullURL];
-    //File bundle 
-    [parser parseJsonFile:@"AllSightings"];
+    //
+    if ([self checkNetWork]) {
+        [parser parseJsonUrl:fullURL];
+    }else {
+        //File bundle 
+        [parser parseJsonFile:@"AllSightings"];
+    }
 }
 
 -(void)setMasterControllerData:(NSMutableArray *)data
@@ -98,6 +106,26 @@ MasterViewController *masterViewController;
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(BOOL)checkNetWork
+{
+    BOOL isExistenceNetwork;
+    Reachability *  reachAbility = [Reachability reachabilityWithHostName:INFO_CHIMPS_DOMAIN];
+    switch ([reachAbility currentReachabilityStatus]) {
+        case NotReachable:
+            isExistenceNetwork = NO;
+            break;
+        case ReachableViaWiFi:
+            isExistenceNetwork = YES;
+            break;
+        case ReachableViaWWAN:
+            isExistenceNetwork = YES;
+        default:
+            break;
+    }
+    NSLog(@"ReachAbility:%d",isExistenceNetwork);
+    return isExistenceNetwork;
 }
 
 @end
