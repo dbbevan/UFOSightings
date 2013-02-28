@@ -9,6 +9,7 @@ import scipy.signal
 import pylab
 
 #Custom imports here
+import re #RegressExpression
 import json
 #JSON data loading
 #print( json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}]) )
@@ -71,13 +72,34 @@ df_select_out_sighted_at = None#DataFrame
 len_json_data_results = len(json_data_results)
 for x in range(0,len_json_data_results):
 #    print(json_data_results[x]["duration"])
-    time_period = random.randint(0,len_json_data_results)
+#    time_period = random.randint(0,len_json_data_results) 
+    num_time_period = 1
     if "duration" in json_data_results[x] :
         ##none-uniformed string parse to date time
-#        time_period = json_data_results[x]["duration"]
-        sighting_duration_list.append(time_period)
+        time_period = json_data_results[x]["duration"]
+        time_period = time_period.lower()#lower string
+        ##@see http://www.devshed.com/c/a/Python/String-Manipulation/3/
+        ##Python string operation,keywords:year,month,day,hour,min,sec
+#        if re.search('(year)',time_period) :
+#            num_time_period += 30*24*60*60
+#        if re.search('(month)',time_period) :
+#            num_time_period += 10*24*60*60
+#        if re.search('(day)',time_period) :
+#            num_time_period += 1*24*60*60
+#        if re.search('(hour)',time_period) :
+#            num_time_period += 1*60*60
+        if re.search('(min)',time_period) :
+            num_time_period += 1*60
+        if re.search('(sec)',time_period) :
+            num_time_period += 1*10   
+                             
+#        print("num_time_period:",num_time_period)
+#        time_period = time_period.trip()#trim
+#        time_period = time_period.ltrip()#l-trim
+#        time_period = time_period.rtrip()#r-trim
+        sighting_duration_list.append(num_time_period)
     else:
-        sighting_duration_list.append(time_period)#Default 1sec, for none date time handler.
+        sighting_duration_list.append(num_time_period)#Default 1sec, for none date time handler.
 print("sighting_duration_list:",sighting_duration_list) 
 ###DataFrame
 df_select_out_sighted_at = None
