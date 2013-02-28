@@ -32,11 +32,19 @@ print(json_data_results[0]["reported_at"])
 print(json_data_results[0]["duration"])
 print(json_data_results[0]["location"])
 print(json_data_results[0]["shape"])
-##
+##Variables
+sighting_item_columns = ["duration","shape","location","sighted_at","description","reported_at"]
 sighting_duration_list = []
-df_select_out_sighting_dates_appear = None
+###DataFrame
+df_select_out_sighted_at = None
+###TimeSeries
+ts_select_out_sighted_at = None
+# assemble the data frame,
+# reference on <<Python_for_data_analysis>>,chapter 06-DataLoading,Storage,and File Formats
+df_select_out_sighted_at = pandas.DataFrame(json_data_results,columns=sighting_item_columns)
+print("DataFrame:",df_select_out_sighted_at)
 # create the index from the dates times list
-ts_select_out_sighting_dates_index_appear = pandas.Index(df_select_out_sighting_dates_appear)
+ts_select_out_sighted_at = pandas.Index(df_select_out_sighted_at)
 plt.xlabel('Year of sightings')
 plt.ylabel('Appear time(per second)')
-plt.plot_date(pylab.date2num( ts_select_out_sighting_dates_index_appear ), sighting_duration_list, linestyle='-',color='b')
+plt.plot_date(pylab.date2num( ts_select_out_sighted_at ), sighting_duration_list, linestyle='-',color='b')
