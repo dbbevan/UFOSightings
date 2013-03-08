@@ -13,7 +13,8 @@ import re #RegressExpression
 import json
 #JSON data loading
 #print( json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}]) )
-JSON_FILE_PATH = '../datasets/AllSightings.json'
+#JSON_FILE_PATH = '../datasets/AllSightings.json'
+JSON_FILE_PATH = '../datasets/ufo_awesome_5943.json'
 #http://en.wikipedia.org/wiki/Roswell_UFO_Incident, NAN value will return the time stamp of RoseWell :-)
 HARD_CODE_DATE_TIME = "1947-07-08"
 #Load json file to string,decode
